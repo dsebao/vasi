@@ -4,4 +4,7 @@
 
 Install
  - Run npm i
- - Run gulp
+ - Run gulp start (this copy assets and compile scripts)
+
+ Development
+  - Run gulp
