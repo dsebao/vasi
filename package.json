@@ -1,0 +1,36 @@
+{
+	"name": "Vasi",
+	"repository": "none",
+	"version": "1.0.0",
+	"description": "Default Wordpress Install ( via Gulp.js )",
+	"main": "gulpfile.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"gulp": "gulp"
+	},
+	"author": "dsebao",
+	"license": "ISC",
+	"devDependencies": {
+		"bootstrap": "^4.5.2",
+		"bower": "^1.7.1",
+		"gulp": "github:gulpjs/gulp#v4.0.2",
+		"gulp-autoprefixer": "^3.1.0",
+		"gulp-concat": "^2.6.0",
+		"gulp-imagemin": "^2.4.0",
+		"gulp-include": "^2.1.0",
+		"gulp-install": "^0.6.0",
+		"gulp-minify-css": "^1.2.2",
+		"gulp-newer": "^1.1.0",
+		"gulp-notify": "^2.2.0",
+		"gulp-plumber": "^1.0.1",
+		"gulp-rename": "^1.2.2",
+		"gulp-sass": "^4.0.2",
+		"gulp-sourcemaps": "^1.6.0",
+		"gulp-uglify": "^1.5.1",
+		"gulp-watch": "^4.3.5",
+		"jquery": "^3.5.1",
+		"node-sass": "^4.11.0",
+		"sass": "^1.15.2"
+	},
+	"dependencies": {}
+}

@@ -1,0 +1,15 @@
+{
+	"paths": {
+		"js": "./js",
+		"scss": "./scss",
+		"img": "./dist/img",
+		"imgsrc": "./src/img",
+		"sass": "./sass",
+		"node": "./node_modules/",
+		"dev": "./src",
+		"dist": "./dist",
+		"jquery": "./js/core/jquery/jquery.min.js",
+		"bs4": "./js/core/bootstrap4/bootstrap.bundle.min.js",
+		"vendor": ""
+	}
+}
