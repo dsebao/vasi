@@ -3,7 +3,7 @@ let gulp = require('gulp');
 let plumber = require('gulp-plumber');
 let watch = require('gulp-watch');
 let minifyCSS = require('gulp-minify-css');
-let uglify = require('gulp-uglify');
+let terser = require('gulp-terser');
 let rename = require('gulp-rename');
 let notify = require('gulp-notify');
 let include = require('gulp-include');
@@ -57,36 +57,36 @@ gulp.task('scss', () => {
         .pipe(notify({ message: 'Scss task complete' }));
 });
 
-gulp.task('js', ()  =>{
-	return gulp.src([
+gulp.task('js', () => {
+    return gulp.src([
         paths.jquery,
         paths.bs4,
         paths.js + '/libs/**/*.js',
         paths.js + '/development/**/*.js'
     ])
 
-    .pipe(concat(paths.js + '/scripts.js'))
-    .pipe(gulp.dest('./'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .pipe(gulp.dest('./'))
-    .pipe(notify({ message: 'Scripts task complete' }));
+        .pipe(concat(paths.js + '/scripts.js'))
+        .pipe(gulp.dest('./'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(terser())
+        .pipe(gulp.dest('./'))
+        .pipe(notify({ message: 'Scripts task complete' }));
 });
 
 
 // Watch task -- this runs on every save.
-gulp.task( 'watch', ()  =>{
-	// Watch all .scss files
-	gulp.watch( paths.scss + '/**/**/*.*css', gulp.series('scss') );
-	// Watch main style.scss file for new inclusions
-	gulp.watch(  paths.scss + '/style.scss', gulp.series('scss') );
+gulp.task('watch', () => {
+    // Watch all .scss files
+    gulp.watch(paths.scss + '/**/**/*.*css', gulp.series('scss'));
+    // Watch main style.scss file for new inclusions
+    gulp.watch(paths.scss + '/style.scss', gulp.series('scss'));
 
-	// Watch js files
-	gulp.watch( paths.js + '/development/**/*.js', gulp.series('js') );
+    // Watch js files
+    gulp.watch(paths.js + '/development/**/*.js', gulp.series('js'));
 
 });
 
 
-gulp.task( 'start', gulp.parallel('assets', 'scss', 'js'));
+gulp.task('start', gulp.parallel('assets', 'scss', 'js'));
 
-gulp.task( 'default', gulp.parallel('watch'));
+gulp.task('default', gulp.parallel('watch'));

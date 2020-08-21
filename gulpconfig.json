@@ -8,8 +8,8 @@
 		"node": "./node_modules/",
 		"dev": "./src",
 		"dist": "./dist",
-		"jquery": "./js/core/jquery/jquery.min.js",
-		"bs4": "./js/core/bootstrap4/bootstrap.bundle.min.js",
+		"jquery": "./js/core/jquery/jquery.js",
+		"bs4": "./js/core/bootstrap4/bootstrap.bundle.js",
 		"vendor": ""
 	}
 }
