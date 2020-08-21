@@ -1,10 +1,10 @@
-### Vasi WordPress theme
+# Vasi WordPress theme
 
-##Instructions
+## Instructions
 
 Install
- - Run npm i
- - Run gulp start (this copy assets and compile scripts)
+ - Run `npm i`
+ - Run `gulp start` (this copy assets and compile scripts)
 
  Development
-  - Run gulp
+  - Run `gulp`
