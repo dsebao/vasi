@@ -9,6 +9,7 @@ $theme_includes = array(
 	'/enqueue.php',
 	'/utils.php',
 	'/shortcode.php',
+	'/woocommerce.php',
 	'/metaboxes.php',
 	'/theme_settings.php', // Initialize theme default settings.
 	'/wp_bootstrap_nav.php',

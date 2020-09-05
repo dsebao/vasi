@@ -31,7 +31,7 @@ let onError = function (err) {
 gulp.task('assets', function (done) {
     // Copy all JS files
     gulp
-        .src(paths.node + '/jquery/dist/jquery.min.js')
+        .src(paths.node + '/jquery/dist/jquery.js')
         .pipe(gulp.dest(paths.js + '/core/jquery'));
 
     gulp
@@ -57,20 +57,28 @@ gulp.task('scss', () => {
         .pipe(notify({ message: 'Scss task complete' }));
 });
 
-gulp.task('js', () => {
-    return gulp.src([
+gulp.task('js', (done) => {
+    gulp.src([
         paths.jquery,
         paths.bs4,
         paths.js + '/libs/**/*.js',
-        paths.js + '/development/**/*.js'
     ])
 
-        .pipe(concat(paths.js + '/scripts.js'))
+        .pipe(concat(paths.js + '/core.js'))
+        .pipe(gulp.dest('./'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(terser())
+        .pipe(gulp.dest('./'))
+
+    gulp.src(paths.js + '/development/**/*.js')
+        .pipe(concat(paths.js + '/app.js'))
         .pipe(gulp.dest('./'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(terser())
         .pipe(gulp.dest('./'))
         .pipe(notify({ message: 'Scripts task complete' }));
+
+    done();
 });
 
 
