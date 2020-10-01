@@ -4,7 +4,7 @@
 		"scss": "./scss",
 		"img": "./dist/img",
 		"imgsrc": "./src/img",
-		"sass": "./sass",
+		"sass": "./scss",
 		"node": "./node_modules/",
 		"dev": "./src",
 		"dist": "./dist",

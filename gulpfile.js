@@ -95,6 +95,6 @@ gulp.task('watch', () => {
 });
 
 
-gulp.task('start', gulp.parallel('assets', 'scss', 'js'));
+gulp.task('start', gulp.series('assets', 'scss', 'js'));
 
 gulp.task('default', gulp.parallel('watch'));
